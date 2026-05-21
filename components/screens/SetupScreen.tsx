@@ -31,7 +31,7 @@ export function SetupScreen({ initialProfile, onBack, onSubmit }: SetupScreenPro
 
   return (
     <ScreenShell>
-      <GlassPanel className="grid max-h-full w-full max-w-5xl gap-4 overflow-hidden rounded-2xl p-4 sm:p-5 lg:grid-cols-[0.9fr_1.1fr]">
+      <GlassPanel className="grid w-full max-w-5xl gap-4 rounded-2xl p-4 sm:p-5 lg:max-h-full lg:grid-cols-[0.9fr_1.1fr] lg:overflow-hidden">
         <div className="flex min-h-0 flex-col justify-between rounded-xl border border-white/10 bg-black/20 p-4">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Player setup</p>
@@ -49,7 +49,7 @@ export function SetupScreen({ initialProfile, onBack, onSubmit }: SetupScreenPro
             <div className="text-4xl font-black text-cyan-100">{Number.isFinite(totalHoles) ? totalHoles : 0}</div>
           </motion.div>
         </div>
-        <div className="min-h-0 overflow-hidden">
+        <div className="min-h-0">
           <div className="grid gap-3 sm:grid-cols-2">
             <TextInput
               label="Full Name"

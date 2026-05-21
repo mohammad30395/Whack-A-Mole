@@ -16,7 +16,7 @@ interface PlaygroundScreenProps {
 export function PlaygroundScreen({ selected, onBack, onSelect }: PlaygroundScreenProps) {
   return (
     <ScreenShell>
-      <GlassPanel className="flex max-h-full w-full max-w-6xl flex-col overflow-hidden rounded-2xl p-4 sm:p-5">
+      <GlassPanel className="flex w-full max-w-6xl flex-col rounded-2xl p-4 sm:p-5 md:max-h-full md:overflow-hidden">
         <div className="mb-4 flex items-center justify-between gap-3">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Playground</p>
@@ -26,7 +26,7 @@ export function PlaygroundScreen({ selected, onBack, onSelect }: PlaygroundScree
             Back
           </NeonButton>
         </div>
-        <div className="grid min-h-0 flex-1 grid-cols-2 gap-3 overflow-hidden lg:grid-cols-3">
+        <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 sm:grid-cols-2 md:overflow-hidden lg:grid-cols-3">
           {PLAYGROUNDS.map((playground) => (
             <motion.button
               key={playground.id}

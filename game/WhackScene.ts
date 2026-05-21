@@ -149,8 +149,6 @@ export class WhackScene extends Phaser.Scene {
     const hole = this.holes[holeIndex];
     const color = this.pickColor();
     const group = this.add.container(hole.x, hole.y + hole.radius * 0.6);
-    group.setSize(hole.radius * 2.2, hole.radius * 2.3);
-    group.setInteractive(new Phaser.Geom.Circle(0, -hole.radius * 0.3, hole.radius), Phaser.Geom.Circle.Contains);
 
     if (isCactus) {
       const body = this.add.rectangle(0, -hole.radius * 0.35, hole.radius * 0.72, hole.radius * 1.55, 0x16a34a, 1);
@@ -168,8 +166,11 @@ export class WhackScene extends Phaser.Scene {
       group.add([body, face, leftEye, rightEye, label]);
     }
 
+    const hitZone = this.add.circle(0, -hole.radius * 0.45, hole.radius * 1.25, 0xffffff, 0.001);
+    hitZone.setInteractive({ useHandCursor: true });
+    hitZone.on("pointerdown", () => this.handleTargetClick(holeIndex));
+    group.add(hitZone);
     group.scale = 0.1;
-    group.on("pointerdown", () => this.handleTargetClick(holeIndex));
     this.tweens.add({ targets: group, y: hole.y - hole.radius * 0.2, scale: 1, ease: "Back.Out", duration: 150 });
     this.activeTargets.set(holeIndex, {
       holeIndex,

@@ -52,7 +52,7 @@ const ruleGroups = [
 export function RulesScreen({ onBack, onStart }: RulesScreenProps) {
   return (
     <ScreenShell>
-      <GlassPanel className="flex max-h-full w-full max-w-6xl flex-col overflow-hidden rounded-2xl p-4 sm:p-5">
+      <GlassPanel className="flex w-full max-w-6xl flex-col rounded-2xl p-4 sm:p-5 md:max-h-full md:overflow-hidden">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">How to play</p>
@@ -65,7 +65,7 @@ export function RulesScreen({ onBack, onStart }: RulesScreenProps) {
             </NeonButton>
           </div>
         </div>
-        <div className="grid min-h-0 flex-1 gap-3 overflow-hidden md:grid-cols-2">
+        <div className="grid min-h-0 flex-1 gap-3 md:grid-cols-2 md:overflow-hidden">
           {ruleGroups.map((group, index) => (
             <motion.section
               key={group.title}

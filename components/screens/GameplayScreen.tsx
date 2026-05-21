@@ -70,7 +70,7 @@ export function GameplayScreen({
   }, []);
 
   return (
-    <ScreenShell className={`bg-gradient-to-br ${theme.background}`}>
+    <ScreenShell lockScroll className={`bg-gradient-to-br ${theme.background}`}>
       <div className="grid h-full w-full max-w-7xl grid-rows-[auto_1fr] gap-2 overflow-hidden">
         <GlassPanel className="rounded-xl p-2 sm:p-3">
           <div className="grid grid-cols-4 gap-2 md:grid-cols-8">
