@@ -160,3 +160,9 @@ This data is saved in `localStorage`, so it stays on the same browser and device
 - This is a private Next.js project configured in `package.json`.
 - The Phaser game is dynamically imported with server-side rendering disabled because it depends on browser APIs.
 - No backend service is required for gameplay or leaderboard storage.
+
+## License
+
+This project is licensed under the MIT License.
+
+Copyright (c) 2026 Mohammad Mahmudul Kabir Fahmid. See [LICENSE](./LICENSE) for the full license text.
